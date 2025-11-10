@@ -1,0 +1,1266 @@
+
+# Questions
+
+
+
+########################################################################
+
+
+
+**Steps :** 
+
+
+
+1. create an Empty flutter app using :   **flutter create --empty app_name**
+
+2. go to app using : **cd app_name**
+
+3. To test app run flutter application using : **flutter run**
+
+4. In your app folder go to lib and create an dart file : **eg . question1.dart, card.dart etc**
+
+5. just copy paste given code : **Follow the instructions (Optional Question Based):**
+
+    
+
+    **Adding Image:** 
+
+    
+
+    1. create assets folder in your app root folder for Images : **app_name/assets/image.png**
+
+    2. add image in **pubspec.yaml : Like this**
+
+    
+
+    ```
+
+    flutter:
+
+      uses-material-design: true
+
+      assets:
+
+          - assets/image.png
+
+    ```
+
+    
+
+    iii.  use image in your file :
+
+    
+
+    ```
+
+    child: Image.asset(
+
+                  'assets/image.png', // your image path
+
+    ```
+
+    
+
+    iv. run in terminal: **flutter pub get ||** if not working use: **flutter clean** then use **flutter pub get**
+
+    
+
+    v. Run app: **flutter run → select device → Output**
+
+    
+
+    **Adding google fonts:** 
+
+    
+
+    1. In **pubspec.yaml**  file add :
+
+    
+
+    ```
+
+    dependencies:
+
+      flutter:
+
+        sdk: flutter  
+
+      google_fonts: ^6.2.1
+
+    ```
+
+    
+
+    ii.   Import if not already Imported in Question file  : 
+
+    
+
+    **import 'package:google_fonts/google_fonts.dart';** 
+
+    
+
+    iii.  use given font: Like This :
+
+    
+
+    | **Font Name** | **Code Example** |
+
+    | --- | --- |
+
+    | **Roboto** | style: GoogleFonts.roboto(fontSize: 20) |
+
+    | **Open Sans** | style: GoogleFonts.openSans(fontSize: 20) |
+
+    | **Lato** | style: GoogleFonts.lato(fontSize: 20) |
+
+    | **Montserrat** | style: GoogleFonts.montserrat(fontSize: 20) |
+
+    | **Poppins** | style: GoogleFonts.poppins(fontSize: 20) |
+
+    
+
+    iv.  eg . **GoogleFonts.fontName()**
+
+    
+
+    ```dart
+
+    style: GoogleFonts.pacifico( // font name is pacifico
+
+                  fontSize: 28,
+
+                  color: Colors.purple,
+
+                  fontWeight: FontWeight.bold,
+
+                ),
+
+    ```
+
+    
+
+    v.  run in terminal: **flutter pub get ||** if not working use: **flutter clean** then use **flutter pub get.**
+
+    
+
+    vi. Run app: **flutter run → select device → Output**
+
+    
+
+    when you add something in **pubspec.yaml** run following commands in Terminal:
+
+    
+
+    1. **flutter pub get**
+
+    2. if not working use: **flutter clean** then use **flutter pub get**
+
+6. Update main.dart file : Follow Instructions
+
+    1. import file in main.dart using : ***import* 'question1.dart';** 
+
+    2. In main.dart Remove the Text:(’Hello world!’) from : **child: Text('Hello World!'),**
+
+    3. Add class name : **child: Question_answer(),**
+
+    4. **Optional : change font, Image path, details etc.**
+
+7. Run flutter app: flutter run
+
+
+
+########################################################################
+
+
+
+1. **Container with Border, Margin, Padding & Background (Flutter)**
+
+
+
+```
+
+// Container with Border, Margin, Padding & Background (Flutter)
+
+
+
+import 'package:flutter/material.dart';
+
+class Question_answer extends StatelessWidget {
+
+  const Question_answer({super.key});
+
+  @override
+
+  Widget build(BuildContext context) {
+
+    return Container(
+
+      margin: const EdgeInsets.all(20), // outer space
+
+      padding: const EdgeInsets.all(16), // inner space
+
+      width: 350,
+
+      decoration: BoxDecoration(
+
+        color: Colors.lightBlue.shade50,
+
+        border: Border.all(color: Colors.blueAccent, width: 2),
+
+        borderRadius: BorderRadius.circular(16),
+
+        boxShadow: const [
+
+          BoxShadow(
+
+            color: Colors.black12,
+
+            blurRadius: 8,
+
+            offset: Offset(2, 4),
+
+          ),
+
+        ],
+
+      ),
+
+      child: const Column(
+
+        crossAxisAlignment: CrossAxisAlignment.start,
+
+        children: [
+
+          Text(
+
+            "Q: What is Flutter?",
+
+            style: TextStyle(
+
+              fontSize: 20,
+
+              fontWeight: FontWeight.bold,
+
+              color: Colors.blueAccent,
+
+            ),
+
+          ),
+
+          SizedBox(height: 10),
+
+          Text(
+
+            "A: Flutter is an open-source UI toolkit by Google used to build natively compiled applications for mobile, web, and desktop from a single codebase.",
+
+            style: TextStyle(
+
+              fontSize: 16,
+
+              color: Colors.black87,
+
+              height: 1.4,
+
+            ),
+
+          ),
+
+        ],
+
+      ),
+
+    );
+
+  }
+
+}
+
+```
+
+
+
+########################################################################
+
+
+
+1. **Build a Birthday Wishing Card**
+
+
+
+```dart
+
+// Build a Birthday Wishing Card
+
+import 'package:flutter/material.dart';
+
+import 'package:google_fonts/google_fonts.dart';
+
+
+
+class Question_answer extends StatelessWidget {
+
+  const Question_answer({super.key});
+
+
+
+  @override
+
+  Widget build(BuildContext context) {
+
+    return Scaffold(
+
+      backgroundColor: Colors.pink[50],
+
+      body: Center(
+
+        child: Card(
+
+          elevation: 10,
+
+          shape: RoundedRectangleBorder(
+
+            borderRadius: BorderRadius.circular(20),
+
+          ),
+
+          shadowColor: Colors.pinkAccent,
+
+          color: Colors.white,
+
+          child: Container(
+
+            width: 320,
+
+            padding: const EdgeInsets.all(20),
+
+            decoration: BoxDecoration(
+
+              borderRadius: BorderRadius.circular(20),
+
+              gradient: const LinearGradient(
+
+                colors: [Colors.pinkAccent, Colors.orangeAccent],
+
+                begin: Alignment.topLeft,
+
+                end: Alignment.bottomRight,
+
+              ),
+
+            ),
+
+            child: Column(
+
+              mainAxisSize: MainAxisSize.min,
+
+              children: [
+
+                ClipRRect(
+
+                  borderRadius: BorderRadius.circular(15),
+
+                  child: Image.network(
+
+                    './assets/image.png', // Replace with your image path
+
+                    height: 150,
+
+                    width: 250,
+
+                    fit: BoxFit.cover,
+
+                  ),
+
+                ),
+
+                const SizedBox(height: 20),
+
+                Text(
+
+                  "🎉 Happy Birthday! 🎂",
+
+                  style: GoogleFonts.poppins(
+
+                    fontSize: 24,
+
+                    fontWeight: FontWeight.bold,
+
+                    color: Colors.white,
+
+                    shadows: const [
+
+                      Shadow(
+
+                        offset: Offset(2, 2),
+
+                        blurRadius: 5,
+
+                        color: Colors.black45,
+
+                      ),
+
+                    ],
+
+                  ),
+
+                ),
+
+                const SizedBox(height: 10),
+
+                Text(
+
+                  "Wishing you a day filled with love, laughter, and joy!",
+
+                  textAlign: TextAlign.center,
+
+                  style: GoogleFonts.openSans(
+
+                    fontSize: 16,
+
+                    color: Colors.white70,
+
+                  ),
+
+                ),
+
+              ],
+
+            ),
+
+          ),
+
+        ),
+
+      ),
+
+    );
+
+  }
+
+}
+
+
+
+```
+
+
+
+########################################################################
+
+
+
+1. **Create an Employee ID Card Add photo, name, position, QR code, gradient background**
+
+
+
+```dart
+
+//**Create an Employee ID Card**
+
+import 'package:flutter/material.dart';
+
+import 'package:google_fonts/google_fonts.dart';
+
+import 'package:qr_flutter/qr_flutter.dart';
+
+//add qr_flutter: ^4.1.0 to pubspec.yaml and run flutter pub get
+
+
+
+class Question_answer extends StatelessWidget {
+
+  const Question_answer({super.key});
+
+
+
+  @override
+
+  Widget build(BuildContext context) {
+
+    return Scaffold(
+
+      backgroundColor: Colors.grey[200],
+
+      body: Center(
+
+        child: Container(
+
+          width: 300,
+
+          height: 450,
+
+          decoration: BoxDecoration(
+
+            borderRadius: BorderRadius.circular(25),
+
+            gradient: const LinearGradient(
+
+              colors: [Colors.blueAccent, Colors.lightBlue],
+
+              begin: Alignment.topLeft,
+
+              end: Alignment.bottomRight,
+
+            ),
+
+            boxShadow: [
+
+              BoxShadow(
+
+                color: Colors.black26,
+
+                blurRadius: 10,
+
+                spreadRadius: 2,
+
+                offset: const Offset(3, 5),
+
+              ),
+
+            ],
+
+          ),
+
+          child: Column(
+
+            mainAxisAlignment: MainAxisAlignment.center,
+
+            children: [
+
+              // 🔹 Company Logo
+
+              Padding(
+
+                padding: const EdgeInsets.only(top: 20),
+
+                child: CircleAvatar(
+
+                  backgroundColor: Colors.white,
+
+                  radius: 30,
+
+                  child: Icon(Icons.business, size: 30, color: Colors.blue[700]),
+
+                ),
+
+              ),
+
+              const SizedBox(height: 10),
+
+
+
+              // 🔹 Profile Photo
+
+              const CircleAvatar(
+
+                radius: 45,
+
+                backgroundImage: NetworkImage(
+
+                  '/assets/image.png', // your image path
+
+                ),
+
+              ),
+
+              const SizedBox(height: 15),
+
+
+
+              // 🔹 Employee Name
+
+              Text(
+
+                "XYZ",
+
+                style: GoogleFonts.poppins(
+
+                  fontSize: 22,
+
+                  fontWeight: FontWeight.bold,
+
+                  color: Colors.white,
+
+                ),
+
+              ),
+
+
+
+              // 🔹 Employee Position
+
+              Text(
+
+                "Software Developer",
+
+                style: GoogleFonts.openSans(
+
+                  fontSize: 16,
+
+                  color: Colors.white70,
+
+                ),
+
+              ),
+
+              const SizedBox(height: 20),
+
+
+
+              // 🔹 QR Code Section
+
+              Container(
+
+                padding: const EdgeInsets.all(8),
+
+                decoration: BoxDecoration(
+
+                  color: Colors.white,
+
+                  borderRadius: BorderRadius.circular(12),
+
+                ),
+
+                child: QrImageView(
+
+                  data: "Employee ID: 001 | XYZ | Developer",
+
+                  version: QrVersions.auto,
+
+                  size: 100.0,
+
+                ),
+
+              ),
+
+
+
+              const SizedBox(height: 20),
+
+
+
+              // 🔹 ID Number
+
+              Text(
+
+                "Employee ID: 001",
+
+                style: GoogleFonts.montserrat(
+
+                  color: Colors.white,
+
+                  fontSize: 14,
+
+                ),
+
+              ),
+
+
+
+              const Spacer(),
+
+
+
+              // 🔹 Bottom Bar
+
+              Container(
+
+                width: double.infinity,
+
+                height: 40,
+
+                decoration: BoxDecoration(
+
+                  color: Colors.white24,
+
+                  borderRadius: const BorderRadius.only(
+
+                    bottomLeft: Radius.circular(25),
+
+                    bottomRight: Radius.circular(25),
+
+                  ),
+
+                ),
+
+                child: Center(
+
+                  child: Text(
+
+                    "XYZ Corporation",
+
+                    style: GoogleFonts.poppins(
+
+                      color: Colors.white,
+
+                      fontWeight: FontWeight.w600,
+
+                    ),
+
+                  ),
+
+                ),
+
+              ),
+
+            ],
+
+          ),
+
+        ),
+
+      ),
+
+    );
+
+  }
+
+}
+
+```
+
+
+
+########################################################################
+
+
+
+1. **Build a Student ID Card Include barcode, roll no, college name, photo**
+
+
+
+```dart
+
+import 'package:flutter/material.dart';
+
+import 'package:google_fonts/google_fonts.dart';
+
+import 'package:barcode_widget/barcode_widget.dart';
+
+//add barcode_widget: ^2.0.4 to pubspec.yaml and run flutter pub get
+
+
+
+class Question_answer extends StatelessWidget {
+
+  const Question_answer({super.key});
+
+
+
+  @override
+
+  Widget build(BuildContext context) {
+
+    return Scaffold(
+
+      backgroundColor: Colors.grey[100],
+
+      body: Center(
+
+        child: Container(
+
+          width: 320,
+
+          height: 480,
+
+          decoration: BoxDecoration(
+
+            color: Colors.white,
+
+            borderRadius: BorderRadius.circular(25),
+
+            boxShadow: [
+
+              BoxShadow(
+
+                color: Colors.black26,
+
+                blurRadius: 10,
+
+                spreadRadius: 3,
+
+                offset: const Offset(3, 5),
+
+              ),
+
+            ],
+
+            border: Border.all(color: Colors.blueAccent, width: 2),
+
+          ),
+
+          child: Column(
+
+            children: [
+
+              // 🔹 College Name Header
+
+              Container(
+
+                width: double.infinity,
+
+                decoration: const BoxDecoration(
+
+                  color: Colors.blueAccent,
+
+                  borderRadius: BorderRadius.only(
+
+                    topLeft: Radius.circular(25),
+
+                    topRight: Radius.circular(25),
+
+                  ),
+
+                ),
+
+                padding: const EdgeInsets.all(12),
+
+                child: Text(
+
+                  " College of Engineering",
+
+                  textAlign: TextAlign.center,
+
+                  style: GoogleFonts.poppins(
+
+                    fontSize: 18,
+
+                    fontWeight: FontWeight.bold,
+
+                    color: Colors.white,
+
+                  ),
+
+                ),
+
+              ),
+
+
+
+              const SizedBox(height: 20),
+
+
+
+              // 🔹 Student Photo
+
+              const CircleAvatar(
+
+                radius: 50,
+
+                backgroundImage: NetworkImage(
+
+                  './assets/image.png', // your image path
+
+                ),
+
+              ),
+
+
+
+              const SizedBox(height: 15),
+
+
+
+              // 🔹 Student Name
+
+              Text(
+
+                "Xyz",
+
+                style: GoogleFonts.montserrat(
+
+                  fontSize: 20,
+
+                  fontWeight: FontWeight.bold,
+
+                  color: Colors.blueAccent,
+
+                ),
+
+              ),
+
+
+
+              const SizedBox(height: 8),
+
+
+
+              // 🔹 Roll No
+
+              Text(
+
+                "Roll No: xyz",
+
+                style: GoogleFonts.openSans(
+
+                  fontSize: 16,
+
+                  color: Colors.black87,
+
+                ),
+
+              ),
+
+
+
+              const SizedBox(height: 20),
+
+
+
+              // 🔹 Course and Department
+
+              Text(
+
+                "B.Tech - Computer Science",
+
+                style: GoogleFonts.lato(
+
+                  fontSize: 16,
+
+                  fontWeight: FontWeight.w500,
+
+                  color: Colors.black87,
+
+                ),
+
+              ),
+
+
+
+              const Spacer(),
+
+
+
+              // 🔹 Barcode Section
+
+              Padding(
+
+                padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
+
+                child: BarcodeWidget(
+
+                  barcode: Barcode.code128(),
+
+                  data: '61516 - xyz',
+
+                  width: 250,
+
+                  height: 70,
+
+                  drawText: false,
+
+                ),
+
+              ),
+
+
+
+              // 🔹 Footer
+
+              Container(
+
+                width: double.infinity,
+
+                height: 40,
+
+                decoration: const BoxDecoration(
+
+                  color: Colors.blueAccent,
+
+                  borderRadius: BorderRadius.only(
+
+                    bottomLeft: Radius.circular(25),
+
+                    bottomRight: Radius.circular(25),
+
+                  ),
+
+                ),
+
+                child: Center(
+
+                  child: Text(
+
+                    "Student ID Card - 2025",
+
+                    style: GoogleFonts.poppins(
+
+                      color: Colors.white,
+
+                      fontWeight: FontWeight.w600,
+
+                    ),
+
+                  ),
+
+                ),
+
+              ),
+
+            ],
+
+          ),
+
+        ),
+
+      ),
+
+    );
+
+  }
+
+}
+
+```
+
+
+
+########################################################################
+
+
+
+1. **Display a circular profile image Use CircleAvatar, ClipRRect, or DecorationImage**
+
+
+
+```dart
+
+import 'package:flutter/material.dart';
+
+
+
+class Question_answer extends StatelessWidget {
+
+  const Question_answer({super.key});
+
+
+
+  @override
+
+  Widget build(BuildContext context) {
+
+    return Scaffold(
+
+      backgroundColor: Colors.grey[100],
+
+      body: Center(
+
+        child: Column(
+
+          mainAxisAlignment: MainAxisAlignment.center,
+
+          children: [
+
+            // 🔹 1. Using CircleAvatar
+
+            const Text(
+
+              "Using CircleAvatar",
+
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+
+            ),
+
+            const SizedBox(height: 10),
+
+            const CircleAvatar(
+
+              radius: 50,
+
+              backgroundImage: NetworkImage(
+
+                '/assets/image.png', // Replace with your image path
+
+              ),
+
+            ),
+
+
+
+            const SizedBox(height: 30),
+
+
+
+            // 🔹 2. Using ClipRRect
+
+            const Text(
+
+              "Using ClipRRect",
+
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+
+            ),
+
+            const SizedBox(height: 10),
+
+            ClipRRect(
+
+              borderRadius: BorderRadius.circular(50),
+
+              child: Image.network(
+
+                '/assets/image.png', // Replace with your image path
+
+                width: 100,
+
+                height: 100,
+
+                fit: BoxFit.cover,
+
+              ),
+
+            ),
+
+
+
+            const SizedBox(height: 30),
+
+
+
+            // 🔹 3. Using DecorationImage inside Container
+
+            const Text(
+
+              "Using DecorationImage",
+
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+
+            ),
+
+            const SizedBox(height: 10),
+
+            Container(
+
+              width: 100,
+
+              height: 100,
+
+              decoration: BoxDecoration(
+
+                shape: BoxShape.circle,
+
+                border: Border.all(color: Colors.blueAccent, width: 2),
+
+                image: const DecorationImage(
+
+                  image: NetworkImage(
+
+                    '/assets/image.png', // Replace with your image path
+
+                  ),
+
+                  fit: BoxFit.cover,
+
+                ),
+
+              ),
+
+            ),
+
+          ],
+
+        ),
+
+      ),
+
+    );
+
+  }
+
+}
+
+```
+
+
+
+########################################################################
+
+
+
+1. **Use Google Fonts in different widgets Try GoogleFonts.lato(), GoogleFonts.pacifico() etc.**
+
+
+
+```dart
+
+import 'package:flutter/material.dart';
+
+import 'package:google_fonts/google_fonts.dart';
+
+
+
+class Question_answer extends StatelessWidget {
+
+  const Question_answer({super.key});
+
+
+
+  @override
+
+  Widget build(BuildContext context) {
+
+    return Scaffold(
+
+      backgroundColor: Colors.grey[100],
+
+      appBar: AppBar(
+
+        title: Text(
+
+          "Google Fonts Demo",
+
+          style: GoogleFonts.poppins(fontWeight: FontWeight.bold),
+
+        ),
+
+        backgroundColor: Colors.blueAccent,
+
+      ),
+
+      body: Padding(
+
+        padding: const EdgeInsets.all(20.0),
+
+        child: ListView(
+
+          children: [
+
+            // 🔹 Lato Font
+
+            Text(
+
+              "Lato Font Example",
+
+              style: GoogleFonts.lato(
+
+                fontSize: 24,
+
+                fontWeight: FontWeight.w700,
+
+                color: Colors.blueAccent,
+
+              ),
+
+            ),
+
+            const SizedBox(height: 8),
+
+            Text(
+
+              "Lato is a clean, modern sans-serif typeface perfect for body text and UI design.",
+
+              style: GoogleFonts.lato(fontSize: 16),
+
+            ),
+
+            const Divider(height: 30),
+
+
+
+            // 🔹 Pacifico Font
+
+            Text(
+
+              "Pacifico Font Example",
+
+     
