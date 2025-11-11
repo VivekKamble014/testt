@@ -1,0 +1,114 @@
+
+🚀 Step-by-Step Guide to Run Selenium Programs
+
+⸻
+
+🧩 Step 1: Install Python
+	1.	Download the latest version of Python from:
+👉 https://www.python.org/downloads/￼
+	2.	While installing:
+	•	✅ Check the box “Add Python to PATH”
+	•	Then click Install Now
+	3.	To verify installation:
+
+python --version
+
+
+
+⚙️ Step 2: Install Google Chrome
+	•	Make sure Google Chrome is installed and up to date.
+	•	Selenium will use it for automation.
+
+⸻
+
+🧰 Step 3: Install Required Python Libraries
+
+Open your terminal or command prompt and run:
+
+pip install selenium webdriver-manager requests
+
+✅ Explanation:
+	•	selenium → core automation library
+	•	webdriver-manager → auto-downloads ChromeDriver
+	•	requests → helps check broken links or images
+
+⸻
+
+🧠 Step 4: Create a Python File
+
+Create a new file, for example:
+test_script.py
+
+⸻
+
+🧱 Step 5: Add This Basic Template
+
+Use this as your base code (you can modify it for each question):
+
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.chrome.service import Service as ChromeService
+from selenium.webdriver.chrome.options import Options
+from webdriver_manager.chrome import ChromeDriverManager
+import time
+
+# Setup Chrome options
+options = Options()
+options.add_argument("--start-maximized")
+
+# Initialize driver
+driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()), options=options)
+
+# Open the website
+driver.get("https://example.com")  # Replace with your target site
+time.sleep(2)
+
+print("Page Title:", driver.title)
+
+# Close browser
+driver.quit()
+
+
+⸻
+
+📜 Step 6: Run Your Selenium Script
+
+In your terminal or command prompt, go to the folder containing your .py file and run:
+
+python test_script.py
+
+
+⸻
+
+🧩 Step 7: Verify ChromeDriver Installation
+
+If Chrome doesn’t open, ensure:
+	•	Chrome version matches ChromeDriver version
+	•	webdriver-manager handles this automatically, so updating Selenium and the manager usually helps:
+
+pip install -U selenium webdriver-manager
+
+
+⸻
+
+🧾 Step 8: For Each Question
+
+Once setup works, simply:
+	•	Keep the import & driver setup part same
+	•	Replace the task logic according to each question (Q1–Q10)
+	•	Always end with:
+
+driver.quit()
+
+
+
+⸻
+
+🖼 Step 9: (Optional) Save Screenshots
+
+To capture results:
+
+driver.save_screenshot("homepage.png")
+
+
+⸻
