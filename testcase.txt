@@ -1,7 +1,0 @@
-QUESTION 1: TEST PLAN								
-Write a detailed test plan in IEEE test plan format for online registration & examination application. Candidate will register through valid email ID & will book date & time slot from available dates & time slots. Candidate will select subject from list of subjects given. Application will send user ID & password to the candidates email ID. On the date & time, candidate will login with given user ID & Password. Application will display multiple choice questions & will accept choice from candidate. At the end of given time, application will display the marks.	
-								
-QUESTION 2: TEST CASE								
-Write min 12 test cases for above case study	
-							
-								
