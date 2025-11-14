@@ -1,0 +1,54 @@
+Transfer code/files to EC2 from CloudShell (recommended simple flow)
+
+Use when: you have code on GitHub or local files you can upload to S3 or CloudShell.
+
+Step A1 — Connect to your EC2 from CloudShell
+
+1. Upload PEM to CloudShell (if not already).
+
+
+2. Set permissions:
+
+
+
+chmod 400 2401090.pem
+
+3. SSH:
+
+
+
+Ubuntu AMI:
+
+
+ssh -i 2401090.pem ubuntu@<EC2_PUBLIC_IP>
+
+Amazon Linux:
+
+
+ssh -i 2401090.pem ec2-user@<EC2_PUBLIC_IP>
+
+Step A2 — Pull code from GitHub directly on EC2 (recommended)
+
+On the EC2 shell:
+
+sudo apt update && sudo apt install -y git    # Ubuntu
+# OR for Amazon Linux: sudo yum update -y && sudo yum install -y git
+
+git clone https://github.com/youruser/yourrepo.git
+cd yourrepo
+
+Step A3 — Install dependencies and run app
+
+Example Node.js:
+
+# install node if not present (Ubuntu)
+curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
+sudo apt install -y nodejs
+node -v && npm -v
+
+cd yourrepo
+npm install
+npm run build       # if needed
+npm start           # or pm2 start app.js
+
+(If using PM2: sudo npm install -g pm2 && pm2 start index.js && pm2 save)
